@@ -95,9 +95,8 @@ public class Examen {
                 Pila();
                 break;
             case 5:
-                    burbujaAsc(arr1, 1);
-                    burbujaAsc(arr2, 2);           
-                    
+                burbujaAsc(arr1, 1);
+                burbujaAsc2(arr2, 2);
                 break;
             case 6:
                 break;
@@ -135,6 +134,22 @@ public class Examen {
     }
     
     static void burbujaAsc(int arreglo[], int pila) {
+        for(int i=0; i<arreglo.length-1; i++){
+            for(int j=0; j<arreglo.length-1; j++){
+                if (arreglo[j] > arreglo[j+1]){
+                    int tmp = arreglo[j+1];
+                    arreglo[j+1] = arreglo[j];
+                    arreglo[j] = tmp;
+                }
+            }
+        }
+        System.out.println("\nPila"+pila+" ordenada ascendente:");
+        for(int i=0; i<arreglo.length; i++){
+            System.out.print(arreglo[i]+" | ");
+        }
+       
+    }
+        static void burbujaAsc2(int arreglo[], int pila) {
         for(int i=0; i<arreglo.length-1; i++){
             for(int j=0; j<arreglo.length-1; j++){
                 if (arreglo[j] > arreglo[j+1]){
